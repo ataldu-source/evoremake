@@ -10,6 +10,7 @@ First playable target: the sea-level vertical slice (see `docs/TASKS.md`, S1-S17
 - The pipeline rebuilds the committed rig parts and `rig.json` pixel for pixel from `art/raw/` (compared after a clean re-run; an independent reviewer repeated it).
 - Keying of magenta backgrounds is clean on JPG and PNG, no halo on dark/light/white backgrounds (viewed).
 - Resolution test (`docs/res_test.png`): the art reads clearly at 960x540 and muddy at 480x270.
+- Head/torso split + tint test (`docs/head_tint_test.png`, viewed): seam invisible with matching tints, visible with a 25-degree mismatch; five colour combinations render cleanly apart from the issues in section 4.
 
 ## 3. NOT verified
 - Any in-engine rendering, rig animation or game code (none exists).
@@ -20,12 +21,12 @@ First playable target: the sea-level vertical slice (see `docs/TASKS.md`, S1-S17
 ## 4. Known issues
 - Rotation seams beyond tail ~12 / dorsal ~4 degrees (hidden roots poke out).
 - Extractor has hand-tuned thresholds for horn and side fin; part lists are hard-coded; no variants yet.
-- Base body has the mouth baked in, so jaws would be drawn over it (plan: mouthless base v2).
+- Hue-shift recolour prototype turns orange into brown and leaves speckles on the horn: needs tint masks + palette ramps.
 - Full-canvas 1024x1024 part layers are committed; they will not scale (plan: trimmed atlas).
 
 ## 5. Next steps (priority order)
-1. Parts manifest + body-drift validator + atlas packer (S3a-c).
-2. Mouthless base body and jaw slot; a second variant for tail, horn, fin (art, by the human with Gemini).
+1. Parts manifest + body-drift validator + atlas packer (S3a-c); torso/head split in the pipeline (S3d).
+2. Gemini batch (human): 3 head variants + a second shape for tail, side fin, dorsal fin, horn; colours stay as the base (tints are done in-engine).
 3. Scaffold (S1) and an in-engine rig prototype at 960x540 (S4): swim, sway, swap parts.
 4. Swim/bite controls and one enemy (S6-S8), then evolution menu (S10-S11).
 
@@ -37,8 +38,8 @@ First playable target: the sea-level vertical slice (see `docs/TASKS.md`, S1-S17
 ## Decisions worth remembering
 - Chibi, cutesy, original art only; Gemini is the art generator; parts are generated as in-place edits of a base body and extracted by diffing.
 - Resolution 960x540 with pre-downscaled sprites (revised from 480x270 after the test).
-- Body variants are skins on a fixed silhouette; one base body per class; jaws are their own slot over a mouthless base.
+- Head slot = everything in front of a seam just in front of the gill line (owner's idea); torso+head share one tint, other parts tint independently; one base body per class.
 - The original ROM, if used at all, is a private reference for numbers and behaviour. No sprites, music, maps or text from it go into the repo, and the ROM itself is never committed.
 
 ## Session log
-- Session 1 (2026-10-23): research of the original game; design decisions; art style test across three generators (Gemini chosen); in-place part workflow and extractor; starter repo; independent review accepted, resolution revised, part-system rules written.
+- Session 1 (2026-10-23): head-slot idea and tint prototype; research of the original game; design decisions; art style test across three generators (Gemini chosen); in-place part workflow and extractor; starter repo; independent review accepted, resolution revised, part-system rules written.

@@ -10,8 +10,8 @@ Effort scale: **Low** = mechanical/boilerplate - **Medium** = standard implement
   - [ ] S3a Parts manifest `art/parts.json` replacing the hard-coded part lists; support `_02`/`_03` variants - Medium
   - [ ] S3b Body-drift validator (edit must match the base outside the part region) + QA contact sheet; prefer PNG input - High
   - [ ] S3c Atlas packer: trim to bbox, downscale to display size, keep pivots/offsets, stop committing full-canvas layers - Medium
-  - [ ] S3d Mouthless base body v2 + jaw slot (default smile = jaw 01) - Medium (art + prompt)
-  - [ ] S3e Body skins (tint/overlay on a fixed silhouette + uniform size scale) - Medium
+  - [~] S3d Head slot: split base body into torso + head at the seam (prototype done: `tools/head_tint_test.py`); head variants via in-place edits - Medium
+  - [~] S3e Skins as runtime tint (tint-mask generation + palette-ramp recolour in engine); hue-shift prototype done - Medium
   - [ ] S3f Decide tail bend (mesh bend vs rotation); keep previews inside the safe rotation limits - Medium
 - [~] S4  Rig/compositor - Max  (static rig data + pivots done in `art/rig`; in-engine rig and procedural animation to do)
 - [ ] S5  Anchor editor tool (drag parts, set pivots, preview poses) - High
