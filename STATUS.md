@@ -18,16 +18,19 @@ First playable target: the sea-level vertical slice (see `docs/TASKS.md`, S1-S17
 - That Gemini keeps the body pixel-identical in every edit (no validator yet; checked by eye on 4 edits).
 - Original-game numbers in `docs/RESEARCH.md` (taken from web sources, not cross-checked).
 
+- Four heads checked (`docs/head_gallery.png`, viewed): jaw 1, shark, bitey, carp all keep the silhouette identical at the seam (0 of 140 columns off) and swap onto the base torso with tints.
+
 ## 4. Known issues
 - Rotation seams beyond tail ~12 / dorsal ~4 degrees (hidden roots poke out).
 - Extractor has hand-tuned thresholds for horn and side fin; part lists are hard-coded; no variants yet.
+- Head art: teeth are white on the shark but cream elsewhere; the carp head has a small derpy eye (not the big glossy one); jaw 1 still has a few magenta specks in the mouth.
 - Head edit 1 (toothy jaws, `art/raw/head_jaw1.jpg`): swaps onto the base torso and tints correctly (`docs/head_swap_test.png`), but needs keying-by-connectivity and a palette lock (S3g-S3i); a few mouth gaps stay see-through until Gemini draws a solid mouth interior.
 - Hue-shift recolour prototype turns orange into brown and leaves speckles on the horn: needs tint masks + palette ramps.
 - Full-canvas 1024x1024 part layers are committed; they will not scale (plan: trimmed atlas).
 
 ## 5. Next steps (priority order)
 1. Parts manifest + body-drift validator + atlas packer (S3a-c); torso/head split in the pipeline (S3d).
-2. Gemini batch (human): 2 more head variants (long snout, round lips; mouth interior solid dark navy) + a second shape for tail, side fin, dorsal fin, horn; colours stay as the base (tints are done in-engine).
+2. Gemini batch (human): second shapes for tail, side fin, dorsal fin, horn (in-place edits, no colour changes); optionally re-roll the carp head with the big glossy eye.
 3. Scaffold (S1) and an in-engine rig prototype at 960x540 (S4): swim, sway, swap parts.
 4. Swim/bite controls and one enemy (S6-S8), then evolution menu (S10-S11).
 
@@ -43,4 +46,4 @@ First playable target: the sea-level vertical slice (see `docs/TASKS.md`, S1-S17
 - The original ROM, if used at all, is a private reference for numbers and behaviour. No sprites, music, maps or text from it go into the repo, and the ROM itself is never committed.
 
 ## Session log
-- Session 1 (2026-10-23): first Gemini head edit checked (jaw 1); head-slot idea and tint prototype; research of the original game; design decisions; art style test across three generators (Gemini chosen); in-place part workflow and extractor; starter repo; independent review accepted, resolution revised, part-system rules written.
+- Session 1 (2026-10-23): shark, bitey and carp heads checked (all pass the seam contract); first Gemini head edit checked (jaw 1); head-slot idea and tint prototype; research of the original game; design decisions; art style test across three generators (Gemini chosen); in-place part workflow and extractor; starter repo; independent review accepted, resolution revised, part-system rules written.

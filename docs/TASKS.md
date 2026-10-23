@@ -34,7 +34,9 @@ Effort scale: **Low** = mechanical/boilerplate - **Medium** = standard implement
 
 ### Slice art checklist
 - [x] Base body, tail, dorsal fin, side fin, horn (one variant each)
-- [ ] Jaws (teeth) - at least 3 more variants of tail/horn/fin/jaw so the evolution menu has real choices
+- [x] Heads: base smile, toothy (jaw 1), shark, bitey, carp - all pass the seam contract (extraction into the pipeline pending S3d, S3g-i)
+- [ ] Second shapes for tail, side fin, dorsal fin and horn so the evolution menu has real choices
+- [ ] Per-head anchors (horn mount) for every head variant
 - [ ] Enemies: jellyfish, prey fish, seafloor crawler, pufferfish-style hazard, 1 more
 - [ ] Boss (+ jaw/tail as separate pieces if possible)
 - [ ] Tileset, 3 parallax layers, bubbles/hit sparks

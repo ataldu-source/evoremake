@@ -67,3 +67,6 @@ colours inside the palette - body unchanged between base and edit (same position
   fixed in the pipeline (see TASKS S3g) and by asking for a solid dark mouth interior.
 - Gemini re-renders flat colours slightly differently per image (belly yellow blue-channel 132 vs 124), which shows as a faint seam
   line; the pipeline snaps colours to the base palette (S3h).
+- Heads 2-4 (shark, bitey, carp): none added a tail; all kept the seam silhouette. Bitey is the cleanest (solid dark mouth, cream teeth).
+  Variation to watch: eye size/style (the carp's small eye breaks the "big glossy eye" rule), teeth colour (white vs cream), and
+  see-through gaps between teeth. Add to head prompts: "keep the same big glossy eye" and "teeth cream (#F5E7B8)".
