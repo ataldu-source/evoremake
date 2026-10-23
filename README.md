@@ -8,6 +8,7 @@ Art direction: chibi and cutesy, with original assets only (no ripped sprites or
 
 | Where | What |
 |---|---|
+| `STATUS.md` | the truth about the current state: what runs, what was verified, next steps |
 | `docs/PLAN.md` | design decisions (decided vs proposed), slice scope, risks |
 | `docs/TASKS.md` | task checklists with effort levels (slice first, then full game) |
 | `docs/ART_STYLE.md` | style bible, Gemini prompt templates, QA checklist, lessons learned |

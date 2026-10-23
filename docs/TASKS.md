@@ -4,9 +4,15 @@ Effort scale: **Low** = mechanical/boilerplate - **Medium** = standard implement
 **High** = tricky systems/edge cases - **Max** = hardest, design-heavy. "(volume)" = effort is quantity, not difficulty.
 
 ## Vertical slice (current focus)
-- [ ] S1  Scaffold (Vite+TS, loop, 480x270 scaling, input) - Medium
+- [ ] S1  Scaffold (Vite+TS, loop, 960x540 internal resolution with linear filtering, input) - Medium
 - [x] S2  Style test: generators compared, Gemini chosen, style reference locked - Low
-- [~] S3  Art pipeline + validator - High  (extraction and preview scripts done; validator, atlas packer, outline check still to do)
+- [~] S3  Art pipeline - High  (extraction and preview scripts done; the rest split below)
+  - [ ] S3a Parts manifest `art/parts.json` replacing the hard-coded part lists; support `_02`/`_03` variants - Medium
+  - [ ] S3b Body-drift validator (edit must match the base outside the part region) + QA contact sheet; prefer PNG input - High
+  - [ ] S3c Atlas packer: trim to bbox, downscale to display size, keep pivots/offsets, stop committing full-canvas layers - Medium
+  - [ ] S3d Mouthless base body v2 + jaw slot (default smile = jaw 01) - Medium (art + prompt)
+  - [ ] S3e Body skins (tint/overlay on a fixed silhouette + uniform size scale) - Medium
+  - [ ] S3f Decide tail bend (mesh bend vs rotation); keep previews inside the safe rotation limits - Medium
 - [~] S4  Rig/compositor - Max  (static rig data + pivots done in `art/rig`; in-engine rig and procedural animation to do)
 - [ ] S5  Anchor editor tool (drag parts, set pivots, preview poses) - High
 - [ ] S6  Swim physics, camera, tilemap loader - High
