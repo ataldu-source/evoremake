@@ -11,6 +11,10 @@ Effort scale: **Low** = mechanical/boilerplate - **Medium** = standard implement
   - [ ] S3b Body-drift validator (edit must match the base outside the part region) + QA contact sheet; prefer PNG input - High
   - [ ] S3c Atlas packer: trim to bbox, downscale to display size, keep pivots/offsets, stop committing full-canvas layers - Medium
   - [~] S3d Head slot: split base body into torso + head at the seam (prototype done: `tools/head_tint_test.py`); head variants via in-place edits - Medium
+  - [ ] S3g Keying by connectivity: only background connected to the canvas border is transparent; enclosed magenta regions
+        (open mouths, gaps between teeth) become solid dark navy; clean their magenta fringe (prototype works, small specks remain) - Medium
+  - [ ] S3h Palette lock: snap flat colours to the base body's palette (prototype: 8-colour k-means, ~94% of pixels snap; removes the belly seam) - Medium
+  - [ ] S3i Seam placement: use a straight, near-vertical seam instead of the slanted extension at the belly; validator checks the outline at the seam - Medium
   - [~] S3e Skins as runtime tint (tint-mask generation + palette-ramp recolour in engine); hue-shift prototype done - Medium
   - [ ] S3f Decide tail bend (mesh bend vs rotation); keep previews inside the safe rotation limits - Medium
 - [~] S4  Rig/compositor - Max  (static rig data + pivots done in `art/rig`; in-engine rig and procedural animation to do)
