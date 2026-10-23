@@ -1,0 +1,84 @@
+{
+ "canvas": [
+  1024,
+  1024
+ ],
+ "order": [
+  "tail",
+  "dorsal",
+  "body",
+  "sidefin",
+  "horn"
+ ],
+ "parts": {
+  "tail": {
+   "file": "parts/tail.png",
+   "layer": "behind",
+   "bbox": [
+    116,
+    323,
+    311,
+    701
+   ],
+   "pivot": [
+    255.1,
+    512.8
+   ],
+   "area_px": 46057
+  },
+  "dorsal": {
+   "file": "parts/dorsal.png",
+   "layer": "behind",
+   "bbox": [
+    344,
+    178,
+    695,
+    372
+   ],
+   "pivot": [
+    539.2,
+    321.3
+   ],
+   "area_px": 33936
+  },
+  "horn": {
+   "file": "parts/horn.png",
+   "layer": "front",
+   "bbox": [
+    735,
+    204,
+    968,
+    444
+   ],
+   "pivot": [
+    799.2,
+    389.7
+   ],
+   "area_px": 24526
+  },
+  "sidefin": {
+   "file": "parts/sidefin.png",
+   "layer": "front",
+   "bbox": [
+    409,
+    463,
+    599,
+    633
+   ],
+   "pivot": [
+    585.4,
+    555.3
+   ],
+   "area_px": 24275
+  },
+  "body": {
+   "file": "parts/body.png",
+   "bbox": [
+    220,
+    306,
+    908,
+    719
+   ]
+  }
+ }
+}
