@@ -6,18 +6,22 @@ Effort scale: **Low** = mechanical/boilerplate - **Medium** = standard implement
 ## Vertical slice (current focus)
 - [ ] S1  Scaffold (Vite+TS, loop, 960x540 internal resolution with linear filtering, input) - Medium
 - [x] S2  Style test: generators compared, Gemini chosen, style reference locked - Low
-- [~] S3  Art pipeline - High  (extraction and preview scripts done; the rest split below)
-  - [ ] S3a Parts manifest `art/parts.json` replacing the hard-coded part lists; support `_02`/`_03` variants - Medium
-  - [ ] S3b Body-drift validator (edit must match the base outside the part region) + QA contact sheet; prefer PNG input - High
-  - [ ] S3c Atlas packer: trim to bbox, downscale to display size, keep pivots/offsets, stop committing full-canvas layers - Medium
-  - [~] S3d Head slot: split base body into torso + head at the seam (prototype done: `tools/head_tint_test.py`); head variants via in-place edits - Medium
-  - [ ] S3g Keying by connectivity: only background connected to the canvas border is transparent; enclosed magenta regions
-        (open mouths, gaps between teeth) become solid dark navy; clean their magenta fringe (prototype works, small specks remain) - Medium
-  - [ ] S3h Palette lock: snap flat colours to the base body's palette (prototype: 8-colour k-means, ~94% of pixels snap; removes the belly seam) - Medium
-  - [ ] S3i Seam placement: use a straight, near-vertical seam instead of the slanted extension at the belly; validator checks the outline at the seam - Medium
-  - [~] S3e Skins as runtime tint (tint-mask generation + palette-ramp recolour in engine); hue-shift prototype done - Medium
-  - [ ] S3f Decide tail bend (mesh bend vs rotation); keep previews inside the safe rotation limits - Medium
-- [~] S4  Rig/compositor - Max  (static rig data + pivots done in `art/rig`; in-engine rig and procedural animation to do)
+- [x] S3  Art pipeline - High  (manifest-driven build, validator, palette lock, tint masks, atlas; `python tools/build_assets.py`)
+  - [x] S3a Parts manifest `art/parts.json` (slot, source, mode, layer, anchors); variants are just more entries - Medium
+  - [x] S3b Contract validator: silhouette at the seam, extracted area, unrequested additions (warning) - High
+        (still open: QA contact sheet of all parts; PNG input preferred but JPG is fine)
+  - [x] S3c Atlas packer: shared-grid downscale (x0.34), trim, bleed, pack; outputs `assets/fish/` (committed, ~260 KB) - Medium
+  - [x] S3d Head slot: torso + swappable heads cut at a vertical seam in front of the gill line (head overlaps 6 px) - Medium
+  - [x] S3e Skins: palette ramps + tint masks (`art/palette.json`, `art/skins.json`), reference recolour in `tools/lib_art.py` - Medium
+        (engine shader still to write: `out = rgb + sum_f cov_f * (skinRamp_f(shade) - defaultRamp_f(shade))`)
+  - [ ] S3f Tail bend: rotation is clean to about +/-8 degrees, hidden roots poke out at +/-10; decide mesh bend vs rotation limits - Medium
+  - [x] S3g Keying by connectivity (enclosed magenta -> dark navy) - Medium
+  - [x] S3h Palette lock (also yields the tint masks) - Medium
+  - [x] S3i Near-vertical seam - Medium
+  - [ ] S3j Build speed: about 10 s per image (palette unmixing); cache by source hash - Low
+  - [ ] S3k Per-head anchors for the horn are a guess (carp especially); set them in the anchor editor (S5) - Low
+  - [x] Self-tests with mutation checks: `python tools/selftest.py` (22 checks)
+- [~] S4  Rig/compositor - Max  (atlas + `rig.json` with frames, pivots, draw order and anchors done; in-engine rig, skin shader and procedural animation to do)
 - [ ] S5  Anchor editor tool (drag parts, set pivots, preview poses) - High
 - [ ] S6  Swim physics, camera, tilemap loader - High
 - [ ] S7  Hitboxes, bite, horn ram, tail slap, knockback - High

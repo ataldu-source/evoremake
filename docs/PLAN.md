@@ -54,16 +54,19 @@ the boss is beatable with at least two different builds; the art pipeline works 
 - **Repo health**: commit only trimmed, downscaled atlas output; full-canvas 1024x1024 layers are build artefacts
   (~4 MB each in GPU memory untrimmed, ~280 KB each on disk, which does not scale to 150-250 parts).
 
-## Art pipeline (proven so far)
-1. Generate a hero + a naked base body (flat #FF00FF background).
-2. Ask Gemini to ADD one part to the base body *in the same canvas* (in-place edit).
-3. `tools/extract_parts.py` diffs the edit against the base body, keys out the magenta, and saves the part as a
-   full-canvas RGBA layer plus a pivot in `art/rig/rig.json`.
-4. Because parts are drawn in place, scale and outline weight match the body by construction.
+## Art pipeline (built; `python tools/build_assets.py`)
+1. Generate a base body per class (flat #FF00FF background) and ask Gemini to edit ONE part in place on that same canvas.
+2. List the edit in `art/parts.json`. The build keys it (only border-connected magenta is transparent), locks colours to
+   `art/palette.json` and extracts the part: diff against the base (tail, dorsal, horn), closed loop (side fin) or a seam cut (heads).
+3. The validator rejects heads whose silhouette differs from the base at the seam, and warns about unrequested additions behind it.
+4. Each part is scaled on the shared canvas grid (x0.34, colours bled outwards first), trimmed and packed into `assets/fish/atlas.png`
+   plus `atlas_tint.png` (coverage per tintable family + shade) and `rig.json` (frames, pivots, draw order, anchors).
+5. Skins are ramps in `art/skins.json`; the game recolours with the same linear formula as `tools/lib_art.apply_skin`.
+Because parts are drawn in place, scale and outline weight match the body by construction; no per-part scaling is ever needed.
 
 ## Risks (updated after an independent review)
-- Extraction depends on Gemini leaving the body pixel-identical in every edit: needs a validator (drift check) before more parts.
-- Hand-tuned thresholds (horn, side fin) will not scale to hundreds of parts without a manifest and a QA contact sheet.
+- Extraction depends on Gemini leaving the body unchanged at the seam: the validator now checks the silhouette there; behind-seam drift is only warned about.
+- Per-part extraction modes/thresholds live in the manifest, but hundreds of parts will still need a QA contact sheet (S3b leftover).
 - Rotation seams appear beyond the safe limits (tail ~12 degrees, dorsal ~4); the earlier preview deliberately pushed past them.
 - Rig + procedural animation is the riskiest system: prototype it in-engine first.
 - Part consistency across many variants (style drift): one generator, fresh chat per batch, same references.

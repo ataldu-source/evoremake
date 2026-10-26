@@ -1,0 +1,276 @@
+{
+ "version": 2,
+ "atlas": {
+  "image": "atlas.png",
+  "tint": "atlas_tint.png",
+  "scale": 0.34,
+  "display_scale": 0.17
+ },
+ "palette": "art/palette.json",
+ "frames": {
+  "torso": {
+   "x": 2,
+   "y": 2,
+   "w": 170,
+   "h": 144,
+   "ox": 73,
+   "oy": 102,
+   "pivot": [
+    168.61,
+    176.23
+   ]
+  },
+  "head_base": {
+   "x": 174,
+   "y": 2,
+   "w": 106,
+   "h": 143,
+   "ox": 205,
+   "oy": 102,
+   "pivot": [
+    217.49,
+    173.4
+   ]
+  },
+  "head_jaw1": {
+   "x": 282,
+   "y": 2,
+   "w": 109,
+   "h": 143,
+   "ox": 205,
+   "oy": 102,
+   "pivot": [
+    217.49,
+    173.4
+   ]
+  },
+  "head_shark": {
+   "x": 393,
+   "y": 2,
+   "w": 118,
+   "h": 143,
+   "ox": 205,
+   "oy": 102,
+   "pivot": [
+    217.49,
+    173.4
+   ]
+  },
+  "head_bitey": {
+   "x": 513,
+   "y": 2,
+   "w": 103,
+   "h": 143,
+   "ox": 205,
+   "oy": 102,
+   "pivot": [
+    217.49,
+    173.4
+   ]
+  },
+  "head_carp": {
+   "x": 618,
+   "y": 2,
+   "w": 112,
+   "h": 143,
+   "ox": 205,
+   "oy": 102,
+   "pivot": [
+    217.49,
+    173.4
+   ]
+  },
+  "tail_01": {
+   "x": 732,
+   "y": 2,
+   "w": 75,
+   "h": 132,
+   "ox": 37,
+   "oy": 108,
+   "pivot": [
+    86.72,
+    174.36
+   ]
+  },
+  "horn_01": {
+   "x": 809,
+   "y": 2,
+   "w": 84,
+   "h": 86,
+   "ox": 247,
+   "oy": 67,
+   "pivot": [
+    271.73,
+    132.5
+   ]
+  },
+  "dorsal_01": {
+   "x": 895,
+   "y": 2,
+   "w": 125,
+   "h": 77,
+   "ox": 115,
+   "oy": 58,
+   "pivot": [
+    183.33,
+    109.25
+   ]
+  },
+  "sidefin_01": {
+   "x": 2,
+   "y": 148,
+   "w": 69,
+   "h": 62,
+   "ox": 137,
+   "oy": 155,
+   "pivot": [
+    199.02,
+    188.79
+   ]
+  }
+ },
+ "classes": {
+  "fish": {
+   "draw_order": [
+    "tail",
+    "dorsal",
+    "torso",
+    "head",
+    "sidefin",
+    "horn"
+   ],
+   "layers": {},
+   "slots": {
+    "torso": [
+     "torso"
+    ],
+    "tail": [
+     "tail_01"
+    ],
+    "dorsal": [
+     "dorsal_01"
+    ],
+    "sidefin": [
+     "sidefin_01"
+    ],
+    "horn": [
+     "horn_01"
+    ],
+    "head": [
+     "head_base",
+     "head_jaw1",
+     "head_shark",
+     "head_bitey",
+     "head_carp"
+    ]
+   },
+   "parts": {
+    "tail_01": {
+     "frame": "tail_01",
+     "slot": "tail",
+     "layer": "behind",
+     "anchors": {},
+     "skin_group": "default"
+    },
+    "dorsal_01": {
+     "frame": "dorsal_01",
+     "slot": "dorsal",
+     "layer": "behind",
+     "anchors": {},
+     "skin_group": "default"
+    },
+    "sidefin_01": {
+     "frame": "sidefin_01",
+     "slot": "sidefin",
+     "layer": "front",
+     "anchors": {},
+     "skin_group": "default"
+    },
+    "horn_01": {
+     "frame": "horn_01",
+     "slot": "horn",
+     "layer": "front",
+     "anchors": {},
+     "skin_group": "teal+coral"
+    },
+    "head_base": {
+     "frame": "head_base",
+     "slot": "head",
+     "layer": "front",
+     "anchors": {
+      "horn": [
+       799,
+       390,
+       0
+      ]
+     },
+     "skin_group": "default"
+    },
+    "head_jaw1": {
+     "frame": "head_jaw1",
+     "slot": "head",
+     "layer": "front",
+     "anchors": {
+      "horn": [
+       799,
+       390,
+       0
+      ]
+     },
+     "skin_group": "default"
+    },
+    "head_shark": {
+     "frame": "head_shark",
+     "slot": "head",
+     "layer": "front",
+     "anchors": {
+      "horn": [
+       799,
+       390,
+       0
+      ]
+     },
+     "skin_group": "default"
+    },
+    "head_bitey": {
+     "frame": "head_bitey",
+     "slot": "head",
+     "layer": "front",
+     "anchors": {
+      "horn": [
+       799,
+       390,
+       0
+      ]
+     },
+     "skin_group": "default"
+    },
+    "head_carp": {
+     "frame": "head_carp",
+     "slot": "head",
+     "layer": "front",
+     "anchors": {
+      "horn": [
+       820,
+       410,
+       0
+      ]
+     },
+     "skin_group": "default",
+     "needs_review": "horn anchor guessed; check in the anchor editor"
+    },
+    "torso": {
+     "frame": "torso",
+     "slot": "torso",
+     "layer": "middle",
+     "anchors": {},
+     "skin_group": "body"
+    }
+   }
+  }
+ },
+ "origin": [
+  191.6,
+  174.1
+ ]
+}

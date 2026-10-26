@@ -17,9 +17,10 @@ Art direction: chibi and cutesy, with original assets only (no ripped sprites or
 | `art/` | raw generator output, style references, extracted rig parts |
 | `tools/` | Python scripts that turn raw art into rig parts |
 
-## Rebuild the rig parts
+## Build the game assets from the art
 ```
 pip install -r requirements.txt
-python tools/extract_parts.py   # art/raw/*  ->  art/rig/parts/*.png + art/rig/rig.json
-python tools/preview_rig.py     # art/rig/rig_preview.png
+python tools/build_assets.py     # art/parts.json + art/raw/*  ->  assets/fish/ (atlas, tint atlas, rig.json); exits 1 on a contract failure
+python tools/preview_skins.py    # renders docs/skin_preview.png from the built atlas (heads x skins x tail swing)
+python tools/selftest.py         # 22 checks, including mutation checks
 ```

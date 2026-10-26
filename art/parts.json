@@ -1,0 +1,26 @@
+{
+ "version": 2,
+ "note": "Source of truth for the fish rig. Every part is an in-place Gemini edit of the class's base body (same canvas, same position). Edit this file, then run: python tools/build_assets.py",
+ "atlas_scale": 0.34,
+ "display_scale": 0.17,
+ "classes": {
+  "fish": {
+   "base": "art/raw/body_base.jpg",
+   "seam": {"gill_x": [560, 660], "gill_y": [410, 605], "offset": 14, "torso_extend": 45, "head_overlap": 6},
+   "draw_order": ["tail", "dorsal", "torso", "head", "sidefin", "horn"],
+   "contract": {"seam_columns": [560, 700], "seam_tolerance_px": 2, "max_bad_columns": 0, "warn_extra_px_behind_seam": 2000},
+   "parts": {
+    "tail_01":    {"slot": "tail",    "source": "art/raw/edit_tail.jpg",   "mode": "diff", "layer": "behind", "root_extrude": 34},
+    "dorsal_01":  {"slot": "dorsal",  "source": "art/raw/edit_dorsal.jpg", "mode": "diff", "layer": "behind", "root_extrude": 34},
+    "sidefin_01": {"slot": "sidefin", "source": "art/raw/edit_sidefin.jpg","mode": "loop", "layer": "front"},
+    "horn_01":    {"slot": "horn",    "source": "art/raw/edit_horn.jpg",   "mode": "diff", "layer": "front", "inside_thr": 45, "closing": 5, "skin_group": "teal+coral"},
+    "head_base":  {"slot": "head",    "source": "art/raw/body_base.jpg",   "mode": "seam", "layer": "front", "anchors": {"horn": [799, 390, 0]}},
+    "head_jaw1":  {"slot": "head",    "source": "art/raw/head_jaw1.jpg",   "mode": "seam", "layer": "front", "anchors": {"horn": [799, 390, 0]}},
+    "head_shark": {"slot": "head",    "source": "art/raw/head_shark.jpg",  "mode": "seam", "layer": "front", "anchors": {"horn": [799, 390, 0]}},
+    "head_bitey": {"slot": "head",    "source": "art/raw/head_bitey.jpg",  "mode": "seam", "layer": "front", "anchors": {"horn": [799, 390, 0]}},
+    "head_carp":  {"slot": "head",    "source": "art/raw/head_carp.jpg",   "mode": "seam", "layer": "front", "anchors": {"horn": [820, 410, 0]}, "needs_review": "horn anchor guessed; check in the anchor editor"}
+   },
+   "torso": {"slot": "torso", "layer": "middle"}
+  }
+ }
+}

@@ -1,0 +1,170 @@
+{
+ "note": "Flat-colour palette shared by all parts. 'family' marks tintable colours; shade orders them within a family (0 shadow .. 1 highlight). Edit by hand if the art style changes.",
+ "entries": [
+  {
+   "id": 0,
+   "name": "navy",
+   "rgb": [
+    22,
+    33,
+    69
+   ],
+   "family": "none",
+   "shade": 0
+  },
+  {
+   "id": 1,
+   "name": "navy2",
+   "rgb": [
+    10,
+    33,
+    63
+   ],
+   "family": "none",
+   "shade": 0
+  },
+  {
+   "id": 2,
+   "name": "dark",
+   "rgb": [
+    32,
+    27,
+    38
+   ],
+   "family": "none",
+   "shade": 0
+  },
+  {
+   "id": 3,
+   "name": "eye_blue",
+   "rgb": [
+    39,
+    76,
+    99
+   ],
+   "family": "none",
+   "shade": 0
+  },
+  {
+   "id": 4,
+   "name": "white",
+   "rgb": [
+    251,
+    252,
+    253
+   ],
+   "family": "none",
+   "shade": 0
+  },
+  {
+   "id": 5,
+   "name": "cream",
+   "rgb": [
+    246,
+    228,
+    194
+   ],
+   "family": "none",
+   "shade": 0
+  },
+  {
+   "id": 6,
+   "name": "cream_shadow",
+   "rgb": [
+    199,
+    187,
+    151
+   ],
+   "family": "none",
+   "shade": 0
+  },
+  {
+   "id": 7,
+   "name": "teal_shadow",
+   "rgb": [
+    59,
+    140,
+    147
+   ],
+   "family": "teal",
+   "shade": 0.0
+  },
+  {
+   "id": 8,
+   "name": "teal_main",
+   "rgb": [
+    74,
+    187,
+    179
+   ],
+   "family": "teal",
+   "shade": 0.5
+  },
+  {
+   "id": 9,
+   "name": "teal_light",
+   "rgb": [
+    124,
+    214,
+    212
+   ],
+   "family": "teal",
+   "shade": 1.0
+  },
+  {
+   "id": 10,
+   "name": "yellow_shadow",
+   "rgb": [
+    214,
+    181,
+    108
+   ],
+   "family": "yellow",
+   "shade": 0.0
+  },
+  {
+   "id": 11,
+   "name": "yellow_main",
+   "rgb": [
+    253,
+    223,
+    126
+   ],
+   "family": "yellow",
+   "shade": 0.5
+  },
+  {
+   "id": 12,
+   "name": "coral_main",
+   "rgb": [
+    241,
+    115,
+    98
+   ],
+   "family": "coral",
+   "shade": 0.5
+  },
+  {
+   "id": 13,
+   "name": "coral_light",
+   "rgb": [
+    247,
+    161,
+    150
+   ],
+   "family": "coral",
+   "shade": 1.0
+  },
+  {
+   "id": 14,
+   "name": "coral_shadow",
+   "rgb": [
+    194,
+    94,
+    82
+   ],
+   "family": "coral",
+   "shade": 0.0
+  }
+ ]
+}
